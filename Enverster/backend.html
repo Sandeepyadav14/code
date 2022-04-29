@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MASAI INVESTER</title>
+ <style>
+     #navbar{
+         border: 1px solid red;
+         width:90%;
+         height: 50px;
+         margin: auto;
+         display: flex;
+         justify-content: space-between;
+         margin-bottom: 20px;
+         background-color: white;
+     }
+     #navbar>div{
+         color:white;
+         font-size: 22px;
+         margin: auto;
+     }
+ </style>
+</head>
+<body>
+    <div id="navbar">
+    <div><a href="backend.html">backend</a></div>
+    <div><a href="fronted.html">fronted</a></div>
+</div>
+    <form id="invester">
+      <input id="image" type="text" placeholder="imgurl">
+      <input  id="name" type="text" placeholder="invester name">
+     <input id="role" type="text" placeholder="role">
+     <input id="logo" type="text" placeholder="company logo">
+     <input type="submit">
+    </form>
+</body>
+</html>
+<script>
+    document.querySelector("#invester").addEventListener("submit",investerfun)
+      var investerarray=JSON.parse(localStorage.getItem("investerData")) || []
+    function investerfun(){
+        event.preventDefault();
+
+        var investerobj = {
+            Img: invester.image.value,
+            name: invester.name.value,
+            role: invester.role.value,
+            logo: invester.logo.value,
+        };
+        investerarray.push(investerobj)
+       console.log(investerarray)
+       localStorage.setItem("investerData",JSON.stringify(investerarray))
+       
+    }
+</script>

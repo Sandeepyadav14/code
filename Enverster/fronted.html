@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            border: 1px solid green;
+            display: grid;
+         
+            grid-template-columns: repeat(4,1fr);
+            grid-template-rows: repeat(4,500px);
+          
+        }
+        div>img{
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+          
+
+        }
+        img+h3{
+           text-align: center;
+             font-size: 22px;
+             font-weight: bold;
+             margin-top: -5px;
+        }
+        h3+p{
+            text-align: center;
+            margin-top: -10px;
+        }
+        p+img{
+            width: 40%;
+            margin-left: 90px;
+            margin-top: -20px;
+        }
+      
+    </style>
+</head>
+<body>
+  <div id="container">
+
+
+  </div>
+
+</body>
+</html>
+<script>
+        var investerarray=JSON.parse(localStorage.getItem("investerData"));
+
+        investerarray.forEach(function(elem){
+            var box=document.createElement("div");
+            var invimg=document.createElement("img");
+            invimg.setAttribute("src",elem.Img);
+            var invname=document.createElement("h3");
+            invname.innerText=elem.name;
+            var invrole=document.createElement("p");
+            invrole.innerText=elem.role;
+            var invlogo=document.createElement("img");
+            invlogo.setAttribute("src",elem.logo);
+            box.append(invimg,invname,invrole,invlogo)
+            document.querySelector("#container").append(box)
+        });
+</script>
