@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protype</title>
+</head>
+<body>
+    <h1>custom array</h1>
+</body>
+</html>
+<script>
+  function myArray() {
+  Object.defineProperty(this, "length", {
+    value: 0,
+    writable: true,
+    enumerable: false,
+  });
+
+  this.length = arguments.length;
+
+  for (let i = 0; i < arguments.length; i++) {
+    this[i] = arguments[i];
+  }
+}
+  let arr3 = new myArray(1, 2, 3, 4, 5);
+
+
+  myArray.prototype.push = function (value) {
+ this[this.length] = value;
+   this.length++;
+ };
+arr3.push(10);
+console.log(Object.values(arr3));
+
+
+   
+ myArray.prototype.pop = function () {
+   delete this[this.length - 1];
+      this.length--;
+ }; 
+ arr3.pop();
+ console.log(Object.values(arr3))
+
+   
+ myArray.prototype.revrses = function () {
+   let revrse=[]
+    for (let i = this.length-1; i>=0; i--) {
+    revrse.push(this[i])
+    
+ }
+ return revrse
+}
+
+let x=arr3.revrses();
+ console.log(Object.values(x))
+
+
+ myArray.prototype.print = function () {
+  console.log(Object.values(this));
+};
+arr3.print()
+
+ 
+myArray.prototype.top = function () {
+   let top=this.length-1
+   
+ return this[top]
+}
+
+console.log("top",arr3.top())
+
+myArray.prototype.size = function () {
+   let s=this.length
+   
+ return s
+}
+console.log("size",arr3.size())
+</script>
