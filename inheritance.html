@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+
+
+
+    // object.create()
+
+const automobile = {
+  model: "Nano 420",
+  name:"NANO",
+  Company: "TATA",
+  color: "red",
+  price: 200000,
+};
+
+const s1 = Object.create(automobile, { name: { value: "Maruti" } });
+
+console.log(s1);
+
+
+
+// constructor function()
+
+class Car{
+    constructor(b,c,M){
+        this.brand=b;
+        this.company=c;
+        this.MRP=M;
+
+
+    }
+}
+let s=new Car("maruti","BMW",2300000)
+console.log(s)
+
+
+class Jeep extends Car{
+    constructor(b,c,m,x,a){
+        super(b,c,m)
+        this.color=x;
+        this.average=a;
+
+    }
+}
+let p1=new Jeep("maruti","BMW",2300000,"black","23km/h")
+console.log(p1)
+
+</script>
