@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Purchases</title>
+    <style>
+      #pur{
+        border: 1px solid red;
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        grid-template-rows: auto;
+        gap: 15px;
+        
+      }
+      #navbar{
+     border: 1px solid red;
+     height: 60px;
+     background-color: rgb(33, 211, 211);
+     display: flex;
+     justify-content: space-between;
+   }
+    </style>
+  </head>
+  <body>
+    <div id="navbar">
+      <h3>Buy boucher</h3>
+      <a href="index.html">Purchase Voucher</a>
+    </div>
+    <!-- Wallet balence id:- "wallet_balance" (only number). -->
+    <!-- - All the purchased voucher will be appended in div with id as "purchased_vouchers".
+  - The remaining balance will show on the page inside h3 tag with id as "balance" -->
+  <div id="pur"></div>
+  </body>
+</html>
+<script>
+
+
+let mat=JSON.parse(localStorage.getItem("purchase"))|| []
+
+let con=document.getElementById("pur")
+
+mat.forEach((el) => {
+        let div=document.createElement("div")
+
+        let img=document.createElement("img")
+        img.src=el.image;
+
+        let h3=document.createElement("p")
+        h3=el.name
+
+        let pric=document.createElement("h3")
+        pric=el.price
+
+       
+//    console.log()
+    //  console.log(img,h3,pric)
+       div.append(img,h3,pric)
+    //    console.log(div)
+         con.append(div)
+
+
+    });
+        
+</script>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <style>
+      *{
+        padding: 0px;
+        margin: 0px;
+      }
+   #navbar{
+     border: 1px solid red;
+     height: 60px;
+     background-color: rgb(33, 211, 211);
+     display: flex;
+     justify-content: space-between;
+   }
+   h3{
+     margin-top: 20px;
+   }
+a{
+  margin-top: 20px;
+}
+
+#container{
+  width: 23%;
+  border: 1px solid red;
+  height: 300px;
+  /* margin: auto; */
+  margin-left: 640px;
+  margin-top: 30px;
+  /* display: block; */
+  background-color: aquamarine;
+}
+form{
+  width: 60%;
+  margin-left: 25px;
+  margin-top: 27px;
+  
+}
+form>input{
+  display: block;
+  width: 120%;
+  height: 30px;
+
+  margin: 20px;
+}
+#submit{
+background-color: blue;
+color: white;
+}
+    </style>
+  </head>
+  <body>
+    <div id="navbar">
+      <h3>Sign Up</h3>
+      <a href="voucher.html">Purchase Voucher</a>
+    </div>
+    <div id="container">
+       <form id="form" onsubmit="submitfun(event)">
+         <input placeholder="Name" type="text" id="name">
+         <input placeholder="E-Mail" type="text" id="email">
+         <input placeholder="Address" type="text" id="address">
+         <input placeholder="Amount" type="number" id="amount">
+         <input type="submit" id="submit">
+
+  
+       </form>
+
+
+
+
+
+    </div>
+    <!-- - name input box :- "name"
+  - email input box :- "email"
+  - Address input box :- "address"
+  - Amount input box :- "amount" 
+  - Submit button :- "submit"
+  - The user will be stored with key:- "user"
+  - The input fields should become empty after submitting -->
+  </body>
+</html>
+<script src="unit3_c2\scripts\main.js"></script>
